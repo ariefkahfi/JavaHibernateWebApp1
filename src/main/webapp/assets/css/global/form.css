@@ -1,0 +1,47 @@
+.form-wrapper{
+    
+}
+.form-row{
+    margin : 5px;
+}
+.form-button{
+    cursor: pointer;
+}
+.form-button-blue{
+    border-radius: 3px;
+    border : none;
+    background-color: #2196F3;
+    color : white;
+    padding : 8px;
+}
+.form-label{
+    margin-top : 5px;
+    float : left;
+    width : 150px;
+}
+
+.form-input-type{
+    float : left;
+    border : 1px solid grey;
+    border-radius : 3px;
+    padding : 5px; 
+}
+
+@media screen and (max-width : 500px){
+    .form-row{
+        margin : 15px 0 15px 0;
+    }
+    .form-label{
+        float :none;
+        display : block;
+        width : 100%;
+    }
+    .form-input-type{
+        float :none;
+        display: block;
+        width : 100%;
+    }
+    .form-button-blue{
+        width: 100%;
+    }
+}

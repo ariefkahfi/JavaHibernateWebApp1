@@ -1,0 +1,21 @@
+.accordion-container{
+    background-color: white;
+    margin-bottom : 0.45px;
+    transition: height 500ms;
+    box-shadow: 
+        3px 3px 4px rgba(0,0,0,0.3),
+        3px 3px 15px rgba(0,0,0,0.3);
+}
+
+.accordion-container-title{
+    color : white;
+    background-color: #2196F3;
+    margin : 0;
+    cursor: pointer;
+    font-weight: bold;
+    border : 1px solid grey;
+    padding : 5px;
+}
+.accordion-container-content-container{
+    padding : 5px;
+}

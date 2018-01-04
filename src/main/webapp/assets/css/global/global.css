@@ -1,0 +1,110 @@
+body{
+    margin : 0;
+    background-color: #F1F1F1;
+}
+
+.horizontal-line{
+    padding : 1px;
+    background-color: #EEEEEE;
+}
+.p-no-margin{
+    margin:0;
+}
+a{
+    text-decoration: none;
+    color: unset;
+}
+.padding-title-8px{
+    padding : 8px;
+}
+.margin-right-to-8px{
+    margin-right: 8px;
+}
+.container-inner{
+    margin : 5px;
+}
+.fa{
+    cursor: pointer;
+}
+
+.container-inner-content-container{
+    padding : 5px;
+    border-radius: 3px;
+    background-color: white;
+}
+.cleafix:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.container-inner-title{
+    background-color: #2196F3;
+    padding : 5px;
+    color : white;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+/*#container-inner-one{
+    
+}
+#container-inner-two{
+    
+}*/
+
+*{
+    box-sizing: border-box;
+}
+
+.title{
+    margin : 0;
+}
+
+.right-container{
+    margin-top : 50px;
+    margin-left : 250px;
+}
+
+/*@media screen and (max-width : 960px){
+    body {
+        background-color: crimson;
+    }
+}*/
+
+
+@media screen and (max-width : 768px){
+/*    body{
+        background-color: yellowgreen;
+    }*/
+    #top-navbar-left-item-container{
+        display: inline-block;
+    }
+    #top-navbar{
+        overflow: hidden;
+        height: 40px;
+        transition: height 500ms;
+    }
+    #responsive-top-navbar-menu-item-container{
+        display: block;
+    }
+    #toggle-top-navbar{
+        cursor: pointer;
+    }
+    .left-navbar-inner-second-container-a{
+        padding-left : 15px;
+    }
+    .right-container{
+        margin-left : auto;
+    }
+    #left-navbar{
+        display: none;
+    }
+}
+@media screen and (max-width : 648px){
+/*    body{
+        background-color: dodgerblue;
+    }*/
+}
+@media screen and (max-width : 500px){
+ 
+}

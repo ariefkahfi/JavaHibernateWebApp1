@@ -1,0 +1,29 @@
+#top-navbar{
+    background-color: black;
+    color : white;
+    position: fixed;
+    top : 0;
+    left :0;   
+    right :0;
+}
+#responsive-top-navbar-menu-item-title{
+    padding : 5px;
+}
+#responsive-top-navbar-menu-item-container{
+    display: none;
+}
+#responsive-top-navbar-menu-item-inner-container{
+    
+}
+#top-navbar-left-item-container{
+    display: none;
+    padding : 8px;
+}
+#top-navbar-right-item-container{
+    float : right;
+    font-weight: bold;
+    padding : 10px;
+}
+#top-navbar-right-item-title{
+    cursor: pointer;
+}
