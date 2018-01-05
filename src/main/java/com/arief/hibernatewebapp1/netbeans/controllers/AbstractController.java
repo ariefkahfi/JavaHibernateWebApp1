@@ -21,7 +21,14 @@ public abstract class AbstractController extends HttpServlet{
                 .getRequestDispatcher(jspFile+".jsp")
                 .forward(request, response);
     }
+    protected void redirectToPath(HttpServletResponse response , String path) throws IOException {
+        response.sendRedirect(path);
+    }
     protected void redirectToContextPath(HttpServletResponse response) throws IOException{
         response.sendRedirect(getServletContext().getContextPath());
+    }
+    protected void writePlainText(HttpServletResponse response, String text) throws IOException{
+        response.setContentType("text/plain");
+        response.getWriter().write(text);
     }
 }

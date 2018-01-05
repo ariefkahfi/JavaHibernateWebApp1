@@ -1,3 +1,8 @@
+<%@page import="com.arief.hibernatewebapp1.netbeans.entity.Customer"%>
+<%@page import="com.arief.hibernatewebapp1.netbeans.dao.CustomerDAO"%>
+<%@page import="com.arief.hibernatewebapp1.netbeans.entity.Product"%>
+<%@page import="java.util.List"%>
+<%@page import="com.arief.hibernatewebapp1.netbeans.dao.ProductDAO"%>
 <%@page import="com.arief.hibernatewebapp1.netbeans.consts.PathConsts"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -44,8 +49,13 @@
         <%--start left navbar fixed--%>
         <%@include file="../../../assets/html/left-navbar.html" %>
         <%--end left navbar fixed--%>
-        
+
+
+
         <div class="right-container">
+            <form method="post" action="<%=PathConsts.CP%>/customer/form">
+                <input type="submit" value="Test Submit"/>
+            </form>
             <div class="container-inner">
                 
                 <div class="accordion-container">
@@ -53,17 +63,17 @@
                     <div class="accordion-container-content-container">
                         <div class="accordion-content">
                             <div class="form-wrapper">
-                                <form>
+                                <form method="POST" action="<%=PathConsts.CP%>/customer/form">
                                     <div class="form-row cleafix">
                                         <label for="customer_id" class="form-label">Customer ID</label>
-                                        <input type="text" class="form-input-type" name="customer_id" id="customer_id"/>
+                                        <input type="text" class="form-input-type" name="customer_id"  id="customer_id"/>
                                     </div>
                                     <div class="form-row cleafix">
                                         <label for="customer_name" class="form-label">Customer Name</label>
-                                        <input type="text" class="form-input-type" name="customer_name" id="customer_name"/>
+                                        <input type="text" class="form-input-type" name="customer_name"  id="customer_name"/>
                                     </div>
                                     <div class="form-row">
-                                        <button class="form-button form-button-blue">Submit</button>
+                                        <button class="form-button form-button-blue" >Submit</button>
                                     </div>
                                 </form>
                             </div>
@@ -76,6 +86,28 @@
                     <div class="accordion-container-content-container">
                         <div class="accordion-content">
                             <h2>Our Customer List</h2>
+                            <div class="table-container">
+                                <table class="table-full-width" border="2">
+                                    <tr>
+                                        <td>Customer ID</td>
+                                        <td>Customer Name</td>
+                                    </tr>
+                                    <%
+                                       CustomerDAO cDAO = (CustomerDAO)request.getServletContext().getAttribute("customerDAO");
+                                       List<Customer> customerList = cDAO.findAll();
+                                    %>
+                                    <%
+                                        for (Customer c : customerList){
+                                    %>
+                                            <tr>
+                                                <td><%=c.getCustomerId()%></td>
+                                                <td><%=c.getCustomerName()%></td>
+                                            </tr>
+                                    <%
+                                        }
+                                    %>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -88,4 +120,5 @@
     <script src="<%=PathConsts.CP%>/assets/js/navbar/top-navbar.js"></script>
     <script src="<%=PathConsts.CP%>/assets/js/global/global.js"></script>
     <script src="<%=PathConsts.CP%>/assets/js/accordion/accordion.js"></script>
+    <script src="<%=PathConsts.CP%>/assets/js/customer/customer.js"></script>
 </html>

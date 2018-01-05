@@ -36,6 +36,20 @@ public class HibernateWebAppTest {
 //    }
     
     
+//    @Test
+    public void testSaveCustomer()throws Exception{
+        Customer c = new Customer();
+        c.setCustomerId("C002");
+        c.setCustomerName("Customer002");
+        c.setProductList(new ArrayList<Product>());
+        c.setTransactionHistoryList(new ArrayList<TransactionHistory>());
+        
+        
+        CustomerDAO cDAO = new CustomerDAOImpl(SESSION_FACTORY);
+        cDAO.save(c);
+     
+        
+    }
     
         
     

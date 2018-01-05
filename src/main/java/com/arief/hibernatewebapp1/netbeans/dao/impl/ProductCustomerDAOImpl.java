@@ -41,7 +41,7 @@ public class ProductCustomerDAOImpl implements ProductCustomerDAO{
     
     
     @Override
-    public void buyProduct(String productId, String customerId) {
+    public String buyProduct(String productId, String customerId) {
         Product p = productDAO.findOne(productId);
         Customer c  = customerDAO.findOne(customerId);
         
@@ -69,8 +69,9 @@ public class ProductCustomerDAOImpl implements ProductCustomerDAO{
 
 
             transactionHistoryDAO.save(transactionHistory);            
+            return "Save Product to customer OK";
         }else{
-            System.out.println("DATA EXISTS");
+            return "This product is exists in this customer";
         }
         
 

@@ -43,6 +43,6 @@ package com.arief.hibernatewebapp1.netbeans.dao;
  * @author arief
  */
 public interface ProductCustomerDAO {
-    public void buyProduct(String productId , String customerId);
+    public String buyProduct(String productId , String customerId);
     public void cancelBuyProduct(int transactionId , String productId , String customerId);
 }

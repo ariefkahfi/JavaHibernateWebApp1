@@ -2,7 +2,12 @@ body{
     margin : 0;
     background-color: #F1F1F1;
 }
-
+.table-full-width{
+    width : 100%;
+}
+.table-container{
+    padding : 5px;
+}
 .horizontal-line{
     padding : 1px;
     background-color: #EEEEEE;
@@ -43,6 +48,9 @@ a{
     color : white;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
+}
+#ajax-response{
+    padding : 0;
 }
 
 /*#container-inner-one{

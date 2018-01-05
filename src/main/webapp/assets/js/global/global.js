@@ -7,6 +7,11 @@ redirectHomeLink.onclick = function(){
 
 
 
+function clearForm(listOfIdsInput){
+    listOfIdsInput.forEach(function(x){
+        $(x).val("");
+    });
+}
 window.onresize = function(){
     var topNavbar = document.getElementById("top-navbar");
     if(window.innerWidth > 768){
