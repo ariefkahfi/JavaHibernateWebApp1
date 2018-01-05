@@ -12,6 +12,7 @@
     border : none;
     background-color: #2196F3;
     color : white;
+    cursor: pointer;
     padding : 8px;
 }
 .form-label{

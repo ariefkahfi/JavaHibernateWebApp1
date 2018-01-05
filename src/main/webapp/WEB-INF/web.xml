@@ -16,5 +16,24 @@
             com.arief.hibernatewebapp1.netbeans.listeners.HibernateWebAppServletContextListener
         </listener-class>
     </listener>
+
+
+    <servlet>
+        <servlet-name>ProductCustomerServlet</servlet-name>
+        <servlet-class>com.arief.hibernatewebapp1.netbeans.controllers.productcustomer.ProductCustomerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProductCustomerServlet</servlet-name>
+        <url-pattern>/product-customer/purchase</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>FormCustomerServlet</servlet-name>
+        <servlet-class>com.arief.hibernatewebapp1.netbeans.controllers.customer.form.FormCustomerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FormCustomerServlet</servlet-name>
+        <url-pattern>/customer/form</url-pattern>
+    </servlet-mapping>
     
 </web-app>

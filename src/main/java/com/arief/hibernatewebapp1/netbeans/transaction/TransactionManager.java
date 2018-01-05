@@ -40,7 +40,9 @@ public class TransactionManager {
         try {
             session.beginTransaction();
             o = session.get(type, id);
-            hibInit.initialize(o);
+            if(o!=null){
+                hibInit.initialize(o);
+            }
             session.getTransaction().commit();
             LOGGER.info("committed transaction ....");
         } catch (Exception e) {

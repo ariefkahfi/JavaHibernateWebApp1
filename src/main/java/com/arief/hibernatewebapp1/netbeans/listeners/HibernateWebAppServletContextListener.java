@@ -34,10 +34,6 @@ public class HibernateWebAppServletContextListener implements ServletContextList
     public void contextInitialized(ServletContextEvent sce) {
         LOGGER.log(Level.INFO,"contextInitialized ....");
 
-        for(Map.Entry me :  sce.getServletContext().getServletRegistrations().entrySet()){
-            LOGGER.log(Level.INFO,"Servlet_key  : " + me.getKey() + " Servlet_val : " + me.getValue());
-        }
-        
         
         LOGGER.log(Level.INFO,"sessionFactory initialized ....");
         sessionFactory = HibernateSetup.getSessionFactoryInstance();

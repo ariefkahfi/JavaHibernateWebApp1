@@ -53,9 +53,8 @@
 
 
         <div class="right-container">
-            <form method="post" action="${pageContext.servletContext.contextPath}/customer/form">
-                <input type="submit" value="Test Submit"/>
-            </form>
+            <%--<a href="${pageContext.servletContext.contextPath}/customer/form">Home</a>--%>
+            <div id="ajax-response"></div>
             <div class="container-inner">
                 
                 <div class="accordion-container">
@@ -63,7 +62,7 @@
                     <div class="accordion-container-content-container">
                         <div class="accordion-content">
                             <div class="form-wrapper">
-                                <form method="POST" action="<%=PathConsts.CP%>/customer/form">
+                                <div>
                                     <div class="form-row cleafix">
                                         <label for="customer_id" class="form-label">Customer ID</label>
                                         <input type="text" class="form-input-type" name="customer_id"  id="customer_id"/>
@@ -73,9 +72,9 @@
                                         <input type="text" class="form-input-type" name="customer_name"  id="customer_name"/>
                                     </div>
                                     <div class="form-row">
-                                        <button class="form-button form-button-blue" >Submit</button>
+                                        <button class="form-button form-button-blue" onclick="saveCustomer()">Submit</button>
                                     </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -108,6 +107,52 @@
                                     %>
                                 </table>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-container">
+                    <h3 class="accordion-container-title">Purchase a product</h3>
+                    <div class="accordion-container-content-container">
+                        <div class="accordion-content">
+                            <div class="form-wrapper">
+                                <div>
+                                    <div class="form-row cleafix">
+                                        <label for="pc_customer_id" class="form-label">Customer ID</label>
+                                        <input type="text" class="form-input-type" id="pc_customer_id"/>
+                                    </div>
+                                    <div class="form-row cleafix">
+                                        <label for="pc_product_id" class="form-label">Products</label>
+                                        <select id="pc_product_id">
+                                            <%
+                                                ProductDAO pDAO = (ProductDAO)request.getServletContext().getAttribute("productDAO");
+                                                List<Product> productList = pDAO.findAll();
+                                            %>
+                                            <%
+                                                for(Product p : productList){
+                                            %>
+                                                <option value="<%=p.getProductId()%>">
+                                                    <%=p.getProductName()%>
+                                                </option>
+                                            <%
+                                                }
+                                            %>
+                                        </select>
+                                    </div>
+                                    <div class="form-row">
+                                        <button class="form-button-blue" id="button-purchase">Submit Data</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-container">
+                    <h3 class="accordion-container-title">Customer that has bought products</h3>
+                    <div class="accordion-container-content-container">
+                        <div class="accordion-content">
+
                         </div>
                     </div>
                 </div>
