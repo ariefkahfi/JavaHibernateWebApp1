@@ -18,14 +18,14 @@ import org.jboss.logging.Logger;
 public class FormCustomerController extends AbstractController{
 
     private static final Logger LOGGER = Logger.getLogger(FormCustomerController.class.getName());
-    
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String customerId = req.getParameter("customer_id");
-        String customerName = req.getParameter("customer_name");
-        
-        LOGGER.info("ID : " + customerId + " Name : " + customerName);
-            redirectToContextPath(resp);
+//        String customerId = req.getParameter("customer_id");
+//        String customerName = req.getParameter("customer_name");
+//
+//        LOGGER.info("ID : " + customerId + " Name : " + customerName);
+          redirectToContextPath(resp);
 //        redirectToPath(resp, getServletContext().getContextPath()+"/customer");
 //        Customer c = new Customer();
 //        c.setCustomerId(customerId);
@@ -39,7 +39,7 @@ public class FormCustomerController extends AbstractController{
 //        }else{
 //            LOGGER.info("not null cDAO");
 //        }
-        writePlainText(resp, "Save Data customer OK");
+
     }
     
 }

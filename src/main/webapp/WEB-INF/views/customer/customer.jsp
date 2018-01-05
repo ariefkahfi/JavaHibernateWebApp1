@@ -53,7 +53,7 @@
 
 
         <div class="right-container">
-            <form method="post" action="<%=PathConsts.CP%>/customer/form">
+            <form method="post" action="${pageContext.servletContext.contextPath}/customer/form">
                 <input type="submit" value="Test Submit"/>
             </form>
             <div class="container-inner">

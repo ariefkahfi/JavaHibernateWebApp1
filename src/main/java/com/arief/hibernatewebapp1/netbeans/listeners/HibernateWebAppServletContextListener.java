@@ -10,6 +10,8 @@ import com.arief.hibernatewebapp1.netbeans.dao.impl.ProductCustomerDAOImpl;
 import com.arief.hibernatewebapp1.netbeans.dao.impl.ProductDAOImpl;
 import com.arief.hibernatewebapp1.netbeans.dao.impl.TransactionHistoryDAOImpl;
 import com.arief.hibernatewebapp1.netbeans.setup.HibernateSetup;
+
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletContextEvent;
@@ -31,6 +33,10 @@ public class HibernateWebAppServletContextListener implements ServletContextList
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         LOGGER.log(Level.INFO,"contextInitialized ....");
+
+        for(Map.Entry me :  sce.getServletContext().getServletRegistrations().entrySet()){
+            LOGGER.log(Level.INFO,"Servlet_key  : " + me.getKey() + " Servlet_val : " + me.getValue());
+        }
         
         
         LOGGER.log(Level.INFO,"sessionFactory initialized ....");
